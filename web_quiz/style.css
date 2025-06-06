@@ -1,0 +1,124 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+}
+
+h1 {
+    color: #333;
+}
+
+#quiz-area {
+    margin-top: 20px;
+}
+
+#question-container {
+    margin-bottom: 20px;
+    min-height: 50px; /* To avoid layout shifts */
+}
+
+#question-text {
+    font-size: 1.2em;
+    color: #555;
+}
+
+#options-container button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease; /* Added transform transition */
+}
+
+#options-container button:hover {
+    background-color: #0056b3;
+}
+
+#options-container button:active { /* Added active state for press feedback */
+    transform: scale(0.98);
+}
+
+#options-container button.correct {
+    background-color: #28a745; /* Green for correct */
+}
+
+#options-container button.incorrect {
+    background-color: #dc3545; /* Red for incorrect */
+}
+
+
+#next-button {
+    background-color: #6c757d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#next-button:hover {
+    background-color: #545b62;
+}
+
+#feedback-area {
+    margin-top: 15px;
+    min-height: 25px;
+    overflow: hidden; /* To contain animation if it moves */
+}
+
+#feedback-text {
+    font-size: 1em;
+    font-weight: bold;
+    /* Animation will be triggered by JS by adding a class, similar to question fade-in */
+}
+
+.feedback-animate {
+    animation: slideUpFadeIn 0.5s ease-in-out;
+}
+
+@keyframes slideUpFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#score-area {
+    margin-top: 20px;
+    font-size: 1.1em;
+}
+
+/* Basic fade-in animation for questions */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
